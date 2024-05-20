@@ -1,7 +1,10 @@
 #include"m_data.h"
 template<typename T>
-yxb::Data<T>::Data():size(0),data(nullptr)
+yxb::Data<T>::Data()
 {
+	this->data = new T[1];
+	assert(data);
+	this->size = 1;//还没初始化
 }
 
 template<typename T>
@@ -9,7 +12,7 @@ yxb::Data<T>::Data(size_t arrsize)
 {
 	this->data = new T[arrsize];
 	assert(data);
-	this->size = 0;//还没初始化
+	this->size = arrsize;//还没初始化
 }
 
 template<typename T>
